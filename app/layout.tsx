@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ubuntu } from "./util/front.conf";
+import { Figtree } from "next/font/google";
+import Sidebar from "@/components/ui/Sidebar";
+
+const font = Figtree({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Akara Podcast",
@@ -13,8 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${ubuntu}`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`p-2 ${font.className}`}>
+      <Sidebar>
+          {children}
+      </Sidebar>
+      </body>
     </html>
   );
 }
