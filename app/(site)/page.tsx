@@ -1,5 +1,8 @@
 import Header from "@/components/ui/Header";
 import ListItem from "@/components/ui/ListItem";
+
+export const runtime = 'edge';
+
 export default function HomePage() {
   return <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
     <Header>
